@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "gzt-members",
-  "author": "Eniola Osabiya",
   "keywords": [
     "gatsby"
   ],
@@ -12,7 +11,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "build:members": "node utils/members-cli.js"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",

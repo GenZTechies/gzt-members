@@ -2,6 +2,7 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import Logo from "../assets/logo/word-mark.png";
 import LogoIcon from "../assets/logo/logo-icon-purple.png";
+import genztechiesMembers from "../all_members";
 
 export default function IndexPage() {
 	return (
@@ -40,7 +41,19 @@ export default function IndexPage() {
 			<main className="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-200 text-black">
 				<img className="mx-auto h-40 w-auto" src={Logo} alt="gzt-logo-icon-text" />
 
-				<h2 className="max-w-5xl mt-20 text-center text-2xl lg:text-4xl font-bold">Gzt-Members Coming Soon...</h2>
+				<div className="grid grid-cols-1 lg:grid-cols-3 w-3/4 m-auto py-5 gap-8">
+					{genztechiesMembers.map((member, index) => (
+						<div
+							key={index}
+							className="bg-contain w-56 h-56 lg:w-64 lg:h-64 mx-auto my-4 rounded-full"
+							style={{
+								backgroundImage: `url(${member.image_url})`,
+							}}
+						>
+							<h2 className="text-center text-white text-2xl font-semibold bg-green-600 rounded relative top-full p-1">{member.full_name}</h2>
+						</div>
+					))}
+				</div>
 			</main>
 		</>
 	);

@@ -27,6 +27,7 @@ jobs:
 
       - name: Build
         run: |
+          yarn build:members
           yarn build
           cp CNAME public/
 
